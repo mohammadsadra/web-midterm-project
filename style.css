@@ -74,10 +74,14 @@ body, html {
     border-radius: 10px;
     font-size: 12px;
     color: white;
-    height: 20px;
-    width: 50px;
+    height: 23px;
+    width: 60px;
     cursor: pointer;
     margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .submit-button {
