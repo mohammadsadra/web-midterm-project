@@ -1,12 +1,12 @@
 /*For set background to cover entire page*/
-body, html {    
+body, html {
     height: 100%;
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /*contain our squre container*/
-.main-container {   
+.main-container {
     /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
     /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
     background-image: url('assets/images/back.jpg');
@@ -15,9 +15,11 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 /*our form part container*/
 .information-container {
     max-width: 80%;
@@ -29,25 +31,29 @@ body, html {
     justify-content: space-around;
     padding: 30px;
 }
+
 /*Mr or Ms part */
 .left-column {
     display: flex;
     flex-direction: column;
     padding: 5px;
 }
+
 /*prediction part*/
 .right-column {
     display: flex;
     flex-direction: column;
     padding: 5px;
 }
-.enter-name-container{
+
+.enter-name-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 20px;
 }
-.input-name{
+
+.input-name {
     height: 20px;
     width: 100px;
     border-radius: 10px;
@@ -55,14 +61,16 @@ body, html {
     background-color: rgba(161, 200, 217, 0.5);
     padding: 2px 8px 2px 8px;
 }
-.prediction-container{
+
+.prediction-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 40px;
 }
+
 /* all button style */
-.button-style{
+.button-style {
     border: none;
     border-radius: 10px;
     font-size: 12px;
@@ -72,14 +80,16 @@ body, html {
     cursor: pointer;
     margin-top: 20px;
 }
-.submit-button{
+
+.submit-button {
     background-color: cadetblue;
 }
-.clear-button{
+
+.clear-button {
     background-color: rgb(146, 11, 94);
 }
 
-.saved-answer-container{
+.saved-answer-container {
     padding: 10px;
     border: 1px slategray dashed;
     border-radius: 10px;
@@ -88,4 +98,17 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+/* for showing errors */
+.error-container{
+    background-color: rgba(250, 0, 0, 0.8);
+    margin-top: 10px;
+    color: white;
+    font-size: 10;
+    max-width: 35%;
+    max-height: 100px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+
 }

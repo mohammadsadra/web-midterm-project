@@ -15,15 +15,15 @@
             </h4>
             <div class="enter-name-container">
                 <label style="margin-right: 10px;">Name: </label>
-                <input type="text" class="input-name">
+                <input id="name_textbox" type="text" class="input-name">
             </div>
             <form action="/action_page.php">
                 <input type="radio" id="male" value="male">
                 <label for="male">Male</label><br>
                 <input type="radio" id="female" value="female">
                 <label for="female">Female</label><br>
-                <input class="submit-button button-style" type="submit" value="Submit">
-              </form>
+                <button type="button" onclick="getPrediction()" class="submit-button button-style" >Submit</button>
+            </form>
         </div>
         <div class="right-column">
             <div class="prediction-container">
@@ -31,17 +31,18 @@
                     Prediction
                 </h4>
                 <div>
-                    <div>Male</div>
-                    <div>0.97</div>
+                    <div id="response-gender">Unknown</div>
+                    <div id="response-probability">Unknown</div>
                 </div>
             </div>
             <div class="saved-answer-container">
                 <div style="font-weight: bold;">Saved Answer</div>
                 <div>Male</div>
-                <input class="clear-button button-style" type="submit" value="Submit">
+                <button type="button" class="clear-button button-style">Clear</button>
             </div>
         </div>
     </div>
+    <div class="error-container" id="error" style="visibility: hidden"></div>
 </div>
 </body>
 </html>
