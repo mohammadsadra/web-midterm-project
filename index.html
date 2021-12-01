@@ -8,9 +8,29 @@
 </head>
 <body>
 <div class="main-container">
-<div class="information-container">
-
-</div>
+    <div class="information-container">
+        <div class="left-column">
+            <h4>
+                Mr. or Ms.?
+            </h4>
+            <div class="enter-name-container">
+                <label style="margin-right: 10px;">Name: </label>
+                <input type="text" class="input-name">
+            </div>
+            <form action="/action_page.php">
+                <input type="radio" id="male" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" value="female">
+                <label for="female">Female</label><br>
+                <input class="submit-button-style" type="submit" value="Submit">
+              </form>
+        </div>
+        <div class="right-column">
+            <h4>
+                Prediction
+            </h4>
+        </div>
+    </div>
 </div>
 </body>
 </html>
