@@ -17,7 +17,7 @@ const getPrediction = async () => {
     
     let res;
     await fetch('https://api.genderize.io/?name=' + nameInput).then(r => res = r).catch(e=>{
-        showMessage('Something went wrong(API!) :(', 'error')
+        showMessage('Something went wrong(API!) :(', 'error');
         return;
     });
     await res.json().then(data => {
@@ -29,7 +29,7 @@ const getPrediction = async () => {
     });
 
     if (person.gender == null) {
-        showMessage('\"' + person.name + '\" Not found :(');
+        showMessage('\"' + person.name + '\" Not found :(', 'error');
         return;
     }
 
