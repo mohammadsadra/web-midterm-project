@@ -21,8 +21,6 @@ body, html {
 
 /*our form part container*/
 .information-container {
-    max-width: 80%;
-    max-height: 60%;
     background-color: rgba(240, 248, 255, 0.5); /*last property change opacity from 1 to 0.5*/
     border-radius: 10px;
     display: flex;
@@ -105,14 +103,20 @@ body, html {
 }
 
 /* for showing errors */
-.error-container{
+.message-container{
     background-color: rgba(250, 0, 0, 0.8);
     margin-top: 10px;
     color: white;
     font-size: 10;
-    max-width: 35%;
+    max-width: 45%;
     max-height: 100px;
     padding: 10px 20px 10px 20px;
     border-radius: 20px;
+}
+.error-message-container{
+    background-color: rgba(250, 0, 0, 0.8);
+}
 
+.success-message-container{
+    background-color: rgba(43, 248, 139, 0.8);
 }

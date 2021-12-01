@@ -7,16 +7,20 @@ const getPrediction = async () => {
     makeEmptyInputs();
     const nameInput = document.getElementById('name_textbox').value;
     if (nameInput.length > 255) {
-        showError('More than 255 char :(');
+        showMessage('More than 255 char :(', 'error');
         return;
     } else if (!/^[A-Za-z\s]*$/.test(nameInput)) {
-        showError('Enter valid input :(');
+        showMessage('Enter valid input :(', 'error');
         return;
     }
 
     
-    const response = await fetch('https://api.genderize.io/?name=' + nameInput);
-    await response.json().then(data => {
+    let res;
+    await fetch('https://api.genderize.io/?name=' + nameInput).then(r => res = r).catch(e=>{
+        showMessage('Something went wrong(API!) :(', 'error')
+        return;
+    });
+    await res.json().then(data => {
         console.log(data);
         person.count = data['count'];
         person.name = data['name'];
@@ -25,7 +29,7 @@ const getPrediction = async () => {
     });
 
     if (person.gender == null) {
-        showError('\"' + person.name + '\" Not found :(');
+        showMessage('\"' + person.name + '\" Not found :(');
         return;
     }
 
@@ -37,6 +41,7 @@ const getPrediction = async () => {
     if (person.gender != null) {
         document.getElementById(person.gender.toLowerCase()).checked = true;
     }
+    showMessage('successful :)');
     document.getElementById("response-gender").innerHTML = person.gender;
     document.getElementById("response-probability").innerHTML = person.probability;
 }
@@ -45,17 +50,18 @@ const getPrediction = async () => {
 function save() {
     const nameInput = document.getElementById('name_textbox').value;
     if (nameInput.length > 255) {
-        showError('More than 255 char :(');
+        showMessage('More than 255 char :(', 'error');
         return;
     } else if (!/^[A-Za-z\s]*$/.test(nameInput)) {
-        showError('Enter valid input :(');
+        showMessage('Enter valid input :(', 'error');
         return;
     }
 
     if (document.querySelector('input[name="gender"]:checked') == null) {
-            showError('Select gender please!');
+            showMessage('Select gender please!', 'error');
             return;
     }
+    showMessage('successfully added :)');
     localStorage.setItem(nameInput, document.querySelector('input[name="gender"]:checked').value);
     makeEmptyInputs();
 }
@@ -68,8 +74,17 @@ function remove() {
     }
 }
 
-// show error in 2s 
-function showError(message) {
+// show error or success in 2s 
+function showMessage(message, type) {
+
+    if (type == 'error') {
+        document.getElementById("error").classList.remove('success-message-container');
+        document.getElementById("error").classList.add('error-message-container');
+    }
+    else{
+        document.getElementById("error").classList.remove('error-message-container');
+        document.getElementById("error").classList.add('success-message-container');
+    }
     document.getElementById('error').innerHTML = message;
     document.getElementById('error').style.visibility = 'visible';
     window.setTimeout(() => {
