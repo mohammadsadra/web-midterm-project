@@ -5,11 +5,10 @@ body, html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/*contain our squre container*/
+/*container of our all information*/
 .main-container {
     /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
-    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
-    background-image: url('assets/images/back.jpg');
+    background-image: url('assets/images/back-compress.jpg');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,6 +52,7 @@ body, html {
     margin-bottom: 20px;
 }
 
+/* input style */
 .input-name {
     height: 20px;
     width: 100px;
@@ -62,6 +62,7 @@ body, html {
     padding: 2px 8px 2px 8px;
 }
 
+/* pasrts that contain information from server */
 .prediction-container {
     display: flex;
     flex-direction: column;
@@ -84,11 +85,14 @@ body, html {
 .submit-button {
     background-color: cadetblue;
 }
-
 .clear-button {
     background-color: rgb(146, 11, 94);
 }
+.save-button{
+    background-color: rgb(17, 175, 162);
+}
 
+/* where you can see saved answer */
 .saved-answer-container {
     padding: 10px;
     border: 1px slategray dashed;

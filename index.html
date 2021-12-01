@@ -17,13 +17,14 @@
                 <label style="margin-right: 10px;">Name: </label>
                 <input id="name_textbox" type="text" class="input-name">
             </div>
-            <form action="/action_page.php">
-                <input type="radio" id="male" value="male">
+            <form name="genderForm">
+                <input type="radio" name="gender" id="male" value="male">
                 <label for="male">Male</label><br>
-                <input type="radio" id="female" value="female">
+                <input type="radio" name="gender" id="female" value="female">
                 <label for="female">Female</label><br>
                 <button type="button" onclick="getPrediction()" class="submit-button button-style" >Submit</button>
             </form>
+            <button type="button" onclick="save()" class="save-button button-style" >Save</button>
         </div>
         <div class="right-column">
             <div class="prediction-container">
@@ -31,14 +32,14 @@
                     Prediction
                 </h4>
                 <div>
-                    <div id="response-gender">Unknown</div>
-                    <div id="response-probability">Unknown</div>
+                    <div id="response-gender">----</div>
+                    <div id="response-probability">----</div>
                 </div>
             </div>
             <div class="saved-answer-container">
                 <div style="font-weight: bold;">Saved Answer</div>
-                <div>Male</div>
-                <button type="button" class="clear-button button-style">Clear</button>
+                <div id="saved-ans">----</div>
+                <button onclick="remove()" type="button" class="clear-button button-style">Clear</button>
             </div>
         </div>
     </div>
